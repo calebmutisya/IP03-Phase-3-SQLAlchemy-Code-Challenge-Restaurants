@@ -40,10 +40,12 @@ def upgrade():
     op.create_table('reviews',
             sa.Column('id', sa.Integer(), nullable=False),
             sa.Column('star_rating', sa.Integer(), nullable=False),
-            sa.Column('restaurant_id', sa.Integer(), sa.ForeignKey('restaurants.id'),nullable=False),
-            sa.Column('customer_id', sa.Integer(), sa.ForeignKey('customers.id'),nullable=False),
+            sa.Column('restaurant_id', sa.Integer(), nullable=False),
+            sa.Column('customer_id', sa.Integer(), nullable=False),
 
-            sa.PrimaryKeyConstraint('id')
+            sa.PrimaryKeyConstraint('id'),
+            sa.ForeignKeyConstraint(['restaurant_id'],['restaurants.id']),
+            sa.ForeignKeyConstraint(['customer_id'],['customers.id'])
         )
 
 
