@@ -46,3 +46,9 @@ def seed_review():
         )
         session.add(review)
     session.commit()
+
+# seed_restaurant()
+
+# seed_customer()
+
+# seed_review()
