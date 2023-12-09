@@ -142,6 +142,7 @@
 
 ## Technologies used
     -PYTHON
+    -SQLITE
 
 ## Support and contact details
     - email :: mutisyacalebmusau@gmail.com
