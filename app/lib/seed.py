@@ -56,4 +56,4 @@ def seed_review():
 
 # seed_customer()
 
-seed_review()
+# seed_review()
