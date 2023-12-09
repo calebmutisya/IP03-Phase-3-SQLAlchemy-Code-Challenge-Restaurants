@@ -19,6 +19,7 @@ depends_on: Union[str, Sequence[str], None] = None
 
 
 def upgrade():
+    pass
     
     op.create_table('restaurants',
         sa.Column('id', sa.Integer(), nullable=False),
@@ -40,12 +41,12 @@ def upgrade():
     op.create_table('reviews',
             sa.Column('id', sa.Integer(), nullable=False),
             sa.Column('star_rating', sa.Integer(), nullable=False),
-            sa.Column('restaurant_id', sa.Integer(), nullable=False),
-            sa.Column('customer_id', sa.Integer(), nullable=False),
+            sa.Column('restaurant_name', sa.Integer(), nullable=False),
+            sa.Column('customer_name', sa.Integer(), nullable=False),
 
             sa.PrimaryKeyConstraint('id'),
-            sa.ForeignKeyConstraint(['restaurant_id'],['restaurants.id']),
-            sa.ForeignKeyConstraint(['customer_id'],['customers.id'])
+            sa.ForeignKeyConstraint(['restaurant_name'],['restaurants.id']),
+            sa.ForeignKeyConstraint(['customer_name'],['customers.id'])
         )
 
 

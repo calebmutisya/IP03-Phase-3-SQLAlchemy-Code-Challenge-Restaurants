@@ -91,8 +91,8 @@ class Review(Base):
         return f"Review for {self.restaurant.name} by {self.customer.full_name()}: {self.star_rating} stars."
     #should return the `Customer` instance for this review
     def customer(self):
-        return self.customer.full_name()
+        return self.customer
     
     #should return the `Restaurant` instance for this review
     def restaurant(self):
-        return self.restaurant.name
+        return self.restaurant
