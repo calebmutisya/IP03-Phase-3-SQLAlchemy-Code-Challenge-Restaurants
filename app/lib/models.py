@@ -85,6 +85,7 @@ class Review(Base):
     restaurant=relationship('Restaurant', back_populates='reviews')
     customer= relationship('Customer', back_populates='reviews')
 
+
     #should return a string formatted as follows:
     # Review for {insert restaurant name} by {insert customer's full name}: {insert review star_rating} stars.
     def full_review(self):
