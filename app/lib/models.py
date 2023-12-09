@@ -79,7 +79,7 @@ class Review(Base):
 
     id=Column(Integer, primary_key=True)
     star_rating= Column(Integer, nullable=False)
-    restaurant_id= Column(Integer, ForeignKey('restaurant.id'), nullable=False)
+    restaurant_id= Column(Integer, ForeignKey('restaurants.id'), nullable=False)
     customer_id= Column(Integer, ForeignKey('customers.id'), nullable=False)
 
     restaurant=relationship('Restaurant', back_populates='reviews')
@@ -91,8 +91,8 @@ class Review(Base):
         return f"Review for {self.restaurant.name} by {self.customer.full_name()}: {self.star_rating} stars."
     #should return the `Customer` instance for this review
     def customer(self):
-        return self.customer
+        return self.customer.full_name()
     
     #should return the `Restaurant` instance for this review
     def restaurant(self):
-        return self.restaurant
+        return self.restaurant.name
