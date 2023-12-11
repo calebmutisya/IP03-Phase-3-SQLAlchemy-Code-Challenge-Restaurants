@@ -39,11 +39,11 @@ customer_name = full_name(customer_id)
 print(f"***** Full name of customer with ID {customer_id} *****")
 print(f"Customer Full Name: {customer_name}")
 
-# # Test favorite_restaurant function
-# customer_id = 1
-# favorite_restaurant_instance = favorite_restaurant(customer_id)
-# print(f"***** The restaurant instance that has the highest star rating from this customer *****")
-# print(f"Favorite Restaurant: {favorite_restaurant_instance.name}")
+# Test favorite_restaurant function
+customer_id = 5
+favorite_restaurant_instance = favorite_restaurant(customer_id)
+print(f"***** The restaurant instance that has the highest star rating from this customer Mathew Jones*****")
+print(f"Favorite Restaurant: {favorite_restaurant_instance.name}")
 
 
 # # Test add_review function
