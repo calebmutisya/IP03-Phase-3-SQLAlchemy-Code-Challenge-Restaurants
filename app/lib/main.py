@@ -9,9 +9,8 @@ def reviews(restaurant_id):
 def customers(restaurant_id):
     return session.query(Customer).join(Review).filter(Review.restaurant_id == restaurant_id).all()
 #returns _one_ restaurant instance for the restaurant that has the highest   price
-@classmethod
-def fanciest(cls):
-    return session.query(cls).order_by(cls.price.desc()).first()
+def fanciest():
+    return session.query(Restaurant).order_by(Restaurant.price.desc()).first()
 #should return an list of strings with all the reviews for this restaurant
 def all_reviews(self):
     return [review.full_review() for review in self.reviews]

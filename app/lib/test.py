@@ -18,6 +18,14 @@ restaurant_customers = customers(restaurant_id)
 
 for customer in restaurant_customers:
     print(f"Customer ID: {customer.id}, Name: {customer.first_name} {customer.last_name}")
+
+print("***** the restaurant that has the highest price *****")
+fanciest_restaurant = fanciest()
+print(f"The restaurant with the highest price is {fanciest_restaurant.name}")
+
+
+
+
 #Customer
 print(">>>>>>>>>>>> CUSTOMER OPERATIONS <<<<<<<<<<<")
 
