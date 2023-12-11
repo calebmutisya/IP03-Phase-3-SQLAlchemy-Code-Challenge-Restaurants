@@ -1,13 +1,13 @@
 from config import *
-
+from models import Customer, Review, Restaurant
 #RESTAURANT
 #returns a collection of all the reviews for the `Restaurant`
 def reviews(restaurant_id):
     reviews_collection = session.query(Review).filter(Review.restaurant_id == restaurant_id).all()
     return reviews_collection
 #returns a collection of all the customers who reviewed the `Restaurant`
-def customers(self):
-    return [review.customer for review in self.reviews]
+def customers(restaurant_id):
+    return session.query(Customer).join(Review).filter(Review.restaurant_id == restaurant_id).all()
 #returns _one_ restaurant instance for the restaurant that has the highest   price
 @classmethod
 def fanciest(cls):
