@@ -63,11 +63,12 @@ print(f"Favorite Restaurant: {favorite_restaurant_instance.name}")
 #     print(f"Review ID: {review.id}, Star Rating: {review.star_rating}")
 
 
-# # Test customer_reviews function
-# print("***** A collection of all the reviews that the Customer has left *****")
-# customer_reviews_list = customer_reviews(customer)
-# for review in customer_reviews_list:
-#     print(f"Review ID: {review.id}, Star Rating: {review.star_rating}")
+# Test customer_reviews function
+print("***** A collection of all the reviews that the Customer has left by Mathew Jones *****")
+customer = session.query(Customer).filter_by(first_name='Matthew', last_name='Jones').first()
+customer_reviews_list = customer_reviews(customer)
+for review in customer_reviews_list:
+    print(f"Review ID: {review.id}, Star Rating: {review.star_rating}")
 
 
 # # Test reviewed_restaurants function
