@@ -64,7 +64,18 @@ def reviewed_restaurants(customer):
 #should return a string formatted as follows:
 # Review for {insert restaurant name} by {insert customer's full name}: {insert review star_rating} stars.
 def full_review(review):
-    return f"Review for {review.restaurant.name} by {review.customer.full_name()}: {review.star_rating} stars."
+    try:
+        restaurant_name = review.restaurant.name if review.restaurant else "Unknown Restaurant"
+        
+        if review.customer_id:
+            customer = session.query(Customer).get(review.customer_id)
+            customer_name = full_name(customer.id)  # Using the modified full_name function
+        else:
+            customer_name = "Unknown Customer"
+        
+        return f"Review for {restaurant_name} by {customer_name}: {review.star_rating} stars."
+    except Exception as e:
+        return f"Error in full_review: {e}"
 #should return the `Customer` instance for this review
 def reviewer(review):
     return review.customer
