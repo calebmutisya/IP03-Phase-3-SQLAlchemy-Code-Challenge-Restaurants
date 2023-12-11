@@ -34,10 +34,10 @@ for review in all_reviews_list:
 #Customer
 print(">>>>>>>>>>>> CUSTOMER OPERATIONS <<<<<<<<<<<")
 
-# customer_id = 1
-# customer_name = full_name(customer_id)
-# print(f"***** Full name of customer with ID {customer_id} *****")
-# print(f"Customer Full Name: {customer_name}")
+customer_id = 1
+customer_name = full_name(customer_id)
+print(f"***** Full name of customer with ID {customer_id} *****")
+print(f"Customer Full Name: {customer_name}")
 
 # # Test favorite_restaurant function
 # customer_id = 1
