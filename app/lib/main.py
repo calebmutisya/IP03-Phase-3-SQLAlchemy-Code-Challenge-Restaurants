@@ -10,7 +10,7 @@ def customers(self):
 #returns _one_ restaurant instance for the restaurant that has the highest   price
 @classmethod
 def fanciest(cls):
-    return cls.query.order_by(cls.price.desc()).first()
+    return session.query(cls).order_by(cls.price.desc()).first()
 #should return an list of strings with all the reviews for this restaurant
 def all_reviews(self):
     return [review.full_review() for review in self.reviews]
@@ -27,6 +27,8 @@ def favorite_restaurant(self):
 #takes a `restaurant` (an instance of the `Restaurant` class) and a rating- creates a new review for the restaurant with the given `restaurant_id`
 def add_review(self,restaurant,rating):
     new_review= Review(customer=self, restaurant=restaurant, star_rating=rating)
+    session.add(new_review)
+    session.commit()
     return new_review
 
 #takes a `restaurant` (an instance of the `Restaurant` class) and
@@ -40,11 +42,11 @@ def delete_reviews(self, restaurant):
 
 
 #should return a collection of all the reviews that the `Customer` has left
-def reviews(self):
+def customer_reviews(self):
     return self.reviews
 
 #should return a collection of all the restaurants that the `Customer` has
-def restaurants(self):
+def reviewed_restaurants(self):
     return [review.restaurant for review in self.reviews]
 
 
@@ -54,9 +56,9 @@ def restaurants(self):
 def full_review(self):
     return f"Review for {self.restaurant.name} by {self.customer.full_name()}: {self.star_rating} stars."
 #should return the `Customer` instance for this review
-def customer(self):
+def reviewer(self):
     return self.customer
 
 #should return the `Restaurant` instance for this review
-def restaurant(self):
+def reviewed_restaurant(self):
     return self.restaurant
