@@ -81,10 +81,10 @@ for reviewed_restaurant in reviewed_restaurants_list:
 #Review
 print(">>>>>>>>>>>> REVIEW OPERATIONS <<<<<<<<<<<")
 
-# # Test full_review function
-# review = session.query(Review).first()
-# print("***** Full review details *****")
-# print(full_review(review))
+# Test full_review function
+review = session.query(Review).first()
+print("***** Full review details *****")
+print(full_review(review))
 
 # # Test reviewer function
 # print("***** The Customer instance for this review *****")
