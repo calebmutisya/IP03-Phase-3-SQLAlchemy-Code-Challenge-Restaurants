@@ -4,9 +4,11 @@ from main import full_review,reviewer,reviewed_restaurant
 
 #Restaurant
 print(">>>>>>>>>>>> RESTAURANT OPERATIONS <<<<<<<<<<<")
-print("***** collection of all the reviews *****")
+print("***** collection of all the reviews for Restaurant Pitts Callahan *****")
 restaurant_id=2
-print(f"The Restaurant Pits-Callahan has received the following reviews: {[reviews(restaurant_id)]}")
+restaurant_reviews = reviews(restaurant_id)
+for review in restaurant_reviews:
+    print(f"Review ID: {review.id}, Star Rating: {review.star_rating}")
 
 #Customer
 print(">>>>>>>>>>>> CUSTOMER OPERATIONS <<<<<<<<<<<")
